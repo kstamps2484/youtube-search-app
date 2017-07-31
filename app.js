@@ -16,7 +16,10 @@ function fetchApiData(input, callback){
 }
 
 function displaySearchResults(data){
-  
+  var results = data.items.map(function(item, index){
+    return renderResult(item);
+  });
+  $('.search-results').html(results);
 }
 
 //=================== app: main function ===============================
