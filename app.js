@@ -3,9 +3,18 @@ var YOUTUBE_SEARCH_URL = "";
 
 var RESULTS_TEMPLATE = (
   "<div>" +
+  '<a href="" class="video-image-link" target="_blank"><img class="video-image" src="" alt="video image"></a>' +
+  '<h2>' +
+  '<a href="" class="video-name" target="_blank"></a> by <a href="" class="video-owner" target="_blank"></a>'
+  '</h2>' +
   "</div>"
 );
 //================== functions ==========================
+
+function renderResult(result){
+  var template = $(RESULTS_TEMPLATE);
+  
+}
 
 function fetchApiData(input, callback){
   var query = {
@@ -22,7 +31,7 @@ function displaySearchResults(data){
   $('.search-results').html(results);
 }
 
-//=================== app: main function ===============================
+//================= app: main function =================
 function app {
   $('.youtube-search-form').submit( function(event){
     event.preventDefault();
